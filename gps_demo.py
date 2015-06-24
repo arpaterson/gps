@@ -26,6 +26,9 @@ class GpsPoller(threading.Thread):
       gpsd.next() #this will continue to loop and grab EACH set of gpsd info to clear the buffer
  
 if __name__ == '__main__':
+ 
+  os.chdir('/var/www/logs')
+
   gpsp = GpsPoller() # create the thread
   try:
     unitname = os.uname()[1]
